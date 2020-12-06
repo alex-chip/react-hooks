@@ -1,0 +1,24 @@
+.Header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  margin-bottom: 3em;
+}
+
+.Header__title {
+  font-size: 1.5em;
+}
+
+.Header__button {
+  color: #333;
+  padding: .5em 1.5em;
+  outline: none;
+  border-radius: .3em;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 130px;
+}

@@ -1,11 +1,12 @@
-import Header from './components/Header'
-import './App.css';
+import Header from './components/Header/index'
+import Characters from './components/Characters/index'
+import './App.css'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Header/>
-      <h1>Hola Mundo</h1>
+      <Header />
+      <Characters />
     </div>
   );
 }

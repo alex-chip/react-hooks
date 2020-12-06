@@ -1,0 +1,54 @@
+.Characters {
+  max-width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2em;
+}
+
+.Character__container {
+  display: flex;
+  background-color: var(--color-third);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+}
+
+.Character__img {
+  width: 150px;
+  border-radius: .3em 0 0 .3em;
+}
+
+.Character__info {
+  padding-left: 1em;
+  font-size: .8em;
+  text-align: center;
+  width: 100%;
+}
+
+.Character__name {
+  color: var(--color-primary);
+  font-size: 1.4em;
+}
+
+.Character__species {
+
+}
+
+.Character__status {
+
+}
+
+.Character__gender {
+
+}
+
+@media screen and (min-width: 768px) {
+  .Characters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Characters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
