@@ -1,18 +1,28 @@
 .Header {
-  background-color: var(--color-primary);
-  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1em;
   margin-bottom: 3em;
+  position: sticky;
+  top: 0;
+}
+
+.Header.is-dark {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.Header.is-light {
+  background-color: var(--color-third);
+  color: var(--color-primary);
 }
 
 .Header__title {
   font-size: 1.5em;
 }
 
-.Header__button {
+.Button {
   color: #333;
   padding: .5em 1.5em;
   outline: none;
@@ -21,4 +31,14 @@
   font-weight: bold;
   text-transform: uppercase;
   width: 130px;
+}
+
+.Button-isDark {
+  background-color: var(--color-third);
+  color: var(--color-font);
+}
+
+.Button-isLight {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }

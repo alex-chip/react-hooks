@@ -4,17 +4,36 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2em;
+  padding-bottom: 3rem;
+}
+
+.Characters.is-light {
+  background-color: var(--color-white);
+}
+
+.Characters.is-dark {
+  background-color: var(--color-secondary);
 }
 
 .Character__container {
   display: flex;
+  border-radius: .5em 0 0 .5em;
+}
+
+.Character__container.is-dark {
   background-color: var(--color-third);
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+  box-shadow: 4px 4px 8px rgba(255, 255, 255, .5);
+}
+
+.Character__container.is-light {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .6);
 }
 
 .Character__img {
   width: 150px;
-  border-radius: .3em 0 0 .3em;
+  border-radius: .5em 0 0 .5em;
 }
 
 .Character__info {
@@ -25,8 +44,17 @@
 }
 
 .Character__name {
-  color: var(--color-primary);
   font-size: 1.4em;
+}
+
+.Character__name.is-light {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.Character__name.is-dark {
+  color: var(--color-font);
+  background-color: var(--color-white);
 }
 
 .Character__species {
