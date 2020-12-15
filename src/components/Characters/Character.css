@@ -21,52 +21,93 @@
 }
 
 .Character__container.is-dark {
-  background-color: var(--color-third);
+  background-color: #345772;
   box-shadow: 4px 4px 8px rgba(255, 255, 255, .5);
 }
 
 .Character__container.is-light {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, .6);
+  background-color: var(--color-third);
+  color: var(--color-primary);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, .6);
 }
 
 .Character__img {
-  width: 150px;
+  width: 140px;
   border-radius: .5em 0 0 .5em;
 }
 
 .Character__info {
-  padding-left: 1em;
-  font-size: .8em;
+  padding: 1em;
+  font-size: .7rem;
   text-align: center;
   width: 100%;
 }
 
+.Character__name,
+.Character__gender {
+  padding-bottom: .3rem;
+}
+
 .Character__name {
-  font-size: 1.4em;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.Character__name.is-light,
+.Character__gender.is-light {
+  background-color: var(--color-third);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 .Character__name.is-light {
-  color: var(--color-white);
-  background-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.Character__name.is-dark,
+.Character__gender.is-dark {
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  background-color: #345772;
 }
 
 .Character__name.is-dark {
   color: var(--color-font);
-  background-color: var(--color-white);
-}
-
-.Character__species {
-
-}
-
-.Character__status {
-
 }
 
 .Character__gender {
+}
 
+.Character__gender.is-light {
+}
+
+.Character__gender.is-dark {
+}
+
+.Button__favorite {
+  padding: .5rem .6rem;
+  font-size: .55rem;
+  transition: all .2s;
+}
+
+.Button__favorite.is-dark {
+  background-color: var(--color-third);
+}
+
+.Button__favorite.is-light {
+  background-color: var(--color-fourth);
+  color: var(--color-font);
+}
+
+.Button__favorite.is-light:hover,
+.Button__favorite.is-dark:hover {
+  color: var(--color-white);
+}
+
+.Button__favorite.is-light:hover {
+  background-color: var(--color-primary);
+}
+
+.Button__favorite.is-dark:hover {
+  background-color: var(--color-fourth);
 }
 
 @media screen and (min-width: 768px) {
