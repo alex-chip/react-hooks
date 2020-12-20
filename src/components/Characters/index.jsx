@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useReducer, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import ThemeContext from '../../context/ThemeContext'
 import IconSearch from '../../icons/iconSearch/index'
 import Favorites from '../Favorites/index'
@@ -25,14 +25,15 @@ const Characters = () => {
   const { theme } = useContext(ThemeContext)
   const [ favorites, distpach ] = useReducer(favoriteReduce, initialState)
   const [search, setSearch] = useState('')
+  const searchInput = useRef(null)
 
   const handleClick = favorite => {
     distpach({ type: 'ADD_TO_FAVORITE', payload: favorite})
   }
 
   // capturamos el valor del input, es este caso el input text de la busqueda
-  const handleSearch = (event) => {
-    setSearch(event.target.value)
+  const handleSearch = () => {
+    setSearch(searchInput.current.value)
   }
 
   // se filtra los nombre, comparando el listado completo con el valor ingresado en la caja de busqueda
@@ -67,6 +68,7 @@ const Characters = () => {
         <Favorites favorites={favorites} />
         <div className="Search">
           <input
+            ref={searchInput}
             id='search__input'
             placeholder='Buscar'
             type="text"
