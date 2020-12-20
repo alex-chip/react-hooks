@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import ThemeContext from '../../context/ThemeContext'
-import IconSearch from '../../icons/iconSearch/index'
-import Favorites from '../Favorites/index'
+import Favorites from '../Favorites'
+import Search from '../Search'
 import './Character.css'
 
 const initialState = {
@@ -32,9 +32,12 @@ const Characters = () => {
   }
 
   // capturamos el valor del input, es este caso el input text de la busqueda
-  const handleSearch = () => {
+  // const handleSearch = () => {
+  //   setSearch(searchInput.current.value)
+  // }
+  const handleSearch = useCallback(() => {
     setSearch(searchInput.current.value)
-  }
+  }, [])
 
   // se filtra los nombre, comparando el listado completo con el valor ingresado en la caja de busqueda
   // const filteredUsers = characters.filter((user) => {
@@ -48,7 +51,6 @@ const Characters = () => {
     }),
     [characters, search]
   )
-
 
 
   // Toggle de clases para el darkMode
@@ -66,17 +68,11 @@ const Characters = () => {
     <>
       <section className="Wrapper">
         <Favorites favorites={favorites} />
-        <div className="Search">
-          <input
-            ref={searchInput}
-            id='search__input'
-            placeholder='Buscar'
-            type="text"
-            className="Search__input"
-            value={search}
-            onChange={handleSearch} />
-          <IconSearch/>
-        </div>
+        <Search
+          searchInput={searchInput}
+          search={search}
+          handleSearch={handleSearch}
+        />
       </section>
       <section className={'Characters ' + CharactersClasses}>
         {filteredUsers.map(character => (
