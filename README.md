@@ -9,3 +9,15 @@ Los Hooks presentan una alternativa al desarrollo con clases, ya que estos viene
 
 ## ¿Qué es un Hook?
 Un Hook es una función especial que nos permitirá conectarnos a características de React, para trabajar con métodos especiales, los cuales nos permitirán manejar el estado de mejor forma sin depender de clases.
+
+
+## useMemo
+use Memon nos permitirá usar la memoización de forma simple, esto nos permite almacenar lso resultados de una función para que, en caso de enviar lso mismos argumentos que antes, ésta no haga los cálculos otra vez sino que devuelva el resultado que registró antes.
+
+Ejemplo de como crear un **```useMemo```**:
+
+```javascript
+  const memoizedValue = useMemo(() => myFunction(a, b), [valueToWatch])
+```
+
+Donde **myFunction** será la función que no queremos que haga los cálculos siempre, y el valueToWatch es la variable que, al cambiar el valor, hará que nuestro memo se ejecute (igual que el segundo argumento de useEffect).
