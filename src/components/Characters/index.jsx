@@ -1,5 +1,6 @@
-import React, { useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import React, { useCallback, useContext, useMemo, useReducer, useRef, useState } from 'react'
 import ThemeContext from '../../context/ThemeContext'
+import useCharacters from '../../hooks/useCharacters'
 import Favorites from '../Favorites'
 import Search from '../Search'
 import './Character.css'
@@ -7,6 +8,8 @@ import './Character.css'
 const initialState = {
   favorites: []
 }
+
+const API = 'https://rickandmortyapi.com/api/character/'
 
 const favoriteReduce = (state, action) => {
   switch (action.type) {
@@ -21,11 +24,13 @@ const favoriteReduce = (state, action) => {
 }
 
 const Characters = () => {
-  const [ characters, setCharacters ] = useState([])
+  // const [ characters, setCharacters ] = useState([])
   const { theme } = useContext(ThemeContext)
   const [ favorites, distpach ] = useReducer(favoriteReduce, initialState)
   const [search, setSearch] = useState('')
   const searchInput = useRef(null)
+
+  const characters = useCharacters(API)
 
   const handleClick = favorite => {
     distpach({ type: 'ADD_TO_FAVORITE', payload: favorite})
@@ -58,11 +63,11 @@ const Characters = () => {
     ? 'is-light'
     : 'is-dark'
 
-  useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character/')
-      .then(response => response.json())
-      .then(data => setCharacters(data.results))
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://rickandmortyapi.com/api/character/')
+  //     .then(response => response.json())
+  //     .then(data => setCharacters(data.results))
+  // }, [])
 
   return (
     <>
